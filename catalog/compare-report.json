@@ -1,0 +1,34 @@
+{
+  "stickers": {
+    "catalog": 10555,
+    "backend": 10555,
+    "backendEksik": 0,
+    "backendFazla": 0
+  },
+  "keychains": {
+    "catalog": 78,
+    "backend": 78,
+    "backendEksik": 0,
+    "backendFazla": 0
+  },
+  "musickits": {
+    "catalog": 101,
+    "backend": 101,
+    "backendEksik": 0,
+    "backendFazla": 0
+  },
+  "pins(collectibles)": {
+    "catalog": 667,
+    "backend": 667,
+    "backendEksik": 0,
+    "backendFazla": 0
+  },
+  "skins": {
+    "backendEksikSkin": 0,
+    "backendEksikItem": 0
+  },
+  "agents": {
+    "backendEksik": 0,
+    "rarityDuzeltme": 51
+  }
+}
