@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Valve, Counter-Strike 2",
     "rarity": "milspec",
-    "imageUrl": "https://cdn.steamstatic.com/apps/730/icons/econ/music_kits/valve_cs2_01.6958879a95853a86e8fbaebc9efe4518712cb3f9.png",
+    "imageUrl": "https://serverskins.com/images/musickits/music_1.png",
     "stattrak": false,
     "stattrak_only": false
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Valve, CS:GO",
     "rarity": "milspec",
-    "imageUrl": "https://cdn.steamstatic.com/apps/730/icons/econ/music_kits/valve_02.731a1c0b47d69a7d7deb5fbfdd04d74bf3378f9c.png",
+    "imageUrl": "https://serverskins.com/images/musickits/music_2.png",
     "stattrak": false,
     "stattrak_only": false
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "Daniel Sadowski, Crimson Assault",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMXqZ7FN554bw5U70ShTOzseu_HBZ6aurOvI5cPWSXGOSw-gjtLE4GHCxwktx6jjVw4msJHzGaQIgAowwG7B47VZqDQ",
+    "imageUrl": "https://serverskins.com/images/musickits/music_3.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "name": "Noisia, Sharpened",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuO3Se9l90y9elpF_iFE-knZW1-HACuqD7P_Q1JqSXDTfHwr536bk_TnjixU1w5jvSw9m3MSXAtbhIJfc",
+    "imageUrl": "https://serverskins.com/images/musickits/music_4.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "name": "Robert Allaire, Insurgency",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJ3SV4ERh9Yv461D1RCKhz9i2rCNa6fb8P_U8JqWVWmaUk7gm47g5SXznwxsismrXntqueHmeZwYgFNIuEkQzDnuI",
+    "imageUrl": "https://serverskins.com/images/musickits/music_5.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "name": "Sean Murray, A*D*8",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJn6W61tg5pX182a3EFOkm87k-HUI7PCvMac1d6XDVjLDlrxw5bNvGHmwlx50523Rn9n9IiiWcEZ-XdLc0038",
+    "imageUrl": "https://serverskins.com/images/musickits/music_6.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "name": "Feed Me, High Noon",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuM36S4Vtwy9elpAHhQhunysPlriAI7aD5PfBvJKmQWjDIxb8j57drHXmwl04k4mWDm9m3MSXA9LcoLxM",
+    "imageUrl": "https://serverskins.com/images/musickits/music_7.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "name": "Dren, Death's Head Demolition",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMWmS62klpcny6Qu2Fkj3n8S4pCBftqv7O6BuI6eXWGTGlrx357RtFiznxxtx42TW1J_3JonMHxrk",
+    "imageUrl": "https://serverskins.com/images/musickits/music_8.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "name": "Austin Wintory, Desert Fire",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNG6E8V974476_lb1WCKhz9i1-HFZ6qWqP6ZpcvXCXDSUlrgv5rhsGC3iwkt25GjRz9epdSqRPQByFNIuEoOD6xBW",
+    "imageUrl": "https://serverskins.com/images/musickits/music_9.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "name": "Sasha, LNOE",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnqE7VdKpNa6sljjEB6jn5Pi-XMMt_aoO6BrJqDKDTOWkLcmsrY5GX23wUsj4mnXn8HpLyzD8oHEQA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_10.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -83,7 +83,7 @@
     "id": 11,
     "name": "Skog, Metal",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnCY4mklpcmgsg--QhmlzMGw_3QOvqH7baJrd6WXXzXBkb8ktOM5Fn2xlxtz6mrW1J_3JjSDCT4B",
+    "imageUrl": "https://serverskins.com/images/musickits/music_11.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -91,7 +91,7 @@
     "id": 12,
     "name": "Midnight Riders, All I Want for Christmas",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOHKT619y_JPm413iUw7Ozseur3Ba66v6avw9IaDGVmaUku104bI-HC-wk00h5WSAzNahcn-ebwEmD4wwG7Dv5VTfwA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_12.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -99,7 +99,7 @@
     "id": 13,
     "name": "Matt Lange, IsoRhythm",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOHqD8Vp0-oDx1Qm2DxykzcSx-3Bf7auobPw5I6nACzTIlesk6OU_H33rwkVz6mzWm4mhciqJLlh3-4p3w34",
+    "imageUrl": "https://serverskins.com/images/musickits/music_13.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -107,7 +107,7 @@
     "id": 14,
     "name": "Mateo Messina, For No Mankind",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOHqD4Fl48ZTn41fmfk2g0M-0-HUDuPD9bPY_d6jHX2KRlu8ls-U9Fy21l0R24mzWy46oIymWO1A-SswnqhmYKNo",
+    "imageUrl": "https://serverskins.com/images/musickits/music_14.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -115,7 +115,7 @@
     "id": 15,
     "name": "Various Artists, Hotline Miami",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPXSD6V978Yr961Tufk2g0JLmpXsLt6T8OfxsJPOSCDfAw7Ygs-dvSS_kzUx-4jvXnNr7IimSbgY-SswntCV3CPU",
+    "imageUrl": "https://serverskins.com/images/musickits/music_15.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -123,7 +123,7 @@
     "id": 16,
     "name": "Daniel Sadowski, Total Domination",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMXqZ7FN554bw5U70ShTOzsSuqCMJuqKrbvRseaKQDGLAluwntuU8S3vllBsj4juBm9qrJXqXO1MoXowwG7D37VA97g",
+    "imageUrl": "https://serverskins.com/images/musickits/music_16.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -131,7 +131,7 @@
     "id": 17,
     "name": "Damjan Mravunac, The Talos Principle",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMXqa71d7-ZX1_EzpQB7OzseuqHED7aT2bvY7JPGXCmOVku0u4-c_TiznwRki6mTRzY77di6fPQR0CowwG7A3iRcaNw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_17.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -139,7 +139,7 @@
     "id": 18,
     "name": "Proxy, Battlepack",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJWmY_U9KpNa6uwuwGEv0zs_m-3YM7KOqbPY4d6XEDWGWkbkg4eNvGCvrzU0jtT_WmMHpLyx6Oq1mFg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_18.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -147,7 +147,7 @@
     "id": 19,
     "name": "Ki:Theory, MOLOTOV",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPnKD7VN65p7LugipEU30x8Hi-ScPv6D7Mfw6c_SVCzLCx-hz6LEwTHmyxUhz4mWBy97_J2XXMFElSD7z3A",
+    "imageUrl": "https://serverskins.com/images/musickits/music_19.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -155,7 +155,7 @@
     "id": 20,
     "name": "Troels Folmann, Uber Blasto Phone",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIWmY4Fpm8oj451jpTyKhz9i2ryEKtvf_bvBoJKOQXTeVwrwl6OU5F3G3kR534GvTzd78dHyTZwEiFNIuEg48vcSn",
+    "imageUrl": "https://serverskins.com/images/musickits/music_20.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -163,7 +163,7 @@
     "id": 21,
     "name": "Kelly Bailey, Hazardous Environments",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPn6b6U939Y7470DYEUy_y5C2r3IIvvCsav1pdqjGV2OSk-gntrloGn7mlEsjsDnUytigInKVZhhgVMWDIHfBEw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_21.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -171,7 +171,7 @@
     "id": 22,
     "name": "Skog, II-Headshot",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnCY4mklpsnx71u-RRnzzcKw-3pav_D7O_RvcKnECDGRlugl5-JtFnvhxk5ztWjW1J_3JggDF25u",
+    "imageUrl": "https://serverskins.com/images/musickits/music_22.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -179,7 +179,7 @@
     "id": 23,
     "name": "Daniel Sadowski, The 8-Bit Kit",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMXqZ7FN554bw5U70ShTOzsWur3FduaX-bvw7JKPDXD7Alusn6bc8GHHjlxt3tT7Uztr4I3iUagQjD4wwG7CloiQLEg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_23.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -187,7 +187,7 @@
     "id": 24,
     "name": "AWOLNATION, I Am",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNGyY6Vh04I775Ga3EFOjmJDjrHQOv_OsbKFseaDKVzLHk70hsbc4GSvrlEVytWWGm9mhdy6TcEZ-XZaQ4-De",
+    "imageUrl": "https://serverskins.com/images/musickits/music_24.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -195,7 +195,7 @@
     "id": 25,
     "name": "Mord Fustang, Diamonds",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOHSF4VBg55P15F7YEUy_z8_irHdetqqtOfw-JaSQCDbBx74gteQwS3zqlEV-4zncy9qociqfPBhgVMVYMXeUSA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_25.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -203,7 +203,7 @@
     "id": 26,
     "name": "Michael Bross, Invasion!",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOHKU7Vdw-IXm5Ur0fk2g0Jfk-yQI7ParafU9IvOSVzORmLwm4rRqTHi1kU1y4T_Qm92qc3zGZlI-SswnxR50Dnw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_26.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -211,7 +211,7 @@
     "id": 27,
     "name": "Ian Hultquist, Lion's Mouth",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPHqZ7UN54Jbh40rzfk2g0MWxqHVduKT_bfw5d_KSWjXIw-xw6LNvTS-ywht35D7Sw934dC-RbAA-SswnHSbFbTg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_27.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -219,7 +219,7 @@
     "id": 28,
     "name": "New Beat Fund, Sponge Fingerz",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuO36A51N04IHh5F3YEUy_mMGxrCBY66L9P6c9I_OQXzXBw71ztrVtHy3nwB9w5WnTmI6qIijEOxhgVMW0Zuhv-w",
+    "imageUrl": "https://serverskins.com/images/musickits/music_28.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -227,7 +227,7 @@
     "id": 29,
     "name": "Beartooth, Disgusting",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuN36W90J6-5P81Qm2D0ryxsS3ryMKu_P6P_08dvOWDDOSlLd0s7AxTXi1xxl3427TmNqsc3iJLlh34_7J-SA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_29.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -235,7 +235,7 @@
     "id": 30,
     "name": "Lennie Moore, Java Havana Funkaloo",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOX6Z619w-Yj7-FzYEUy_xsPl-yFevKGsbvFpc6DHWzWRmesu5OQ9Tnzmlkp_sGSHztuudn7DbRhgVMXA6cDp0w",
+    "imageUrl": "https://serverskins.com/images/musickits/music_30.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -243,7 +243,7 @@
     "id": 31,
     "name": "Darude, Moments CS:GO",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMXqF8FJwy9elpA7kGE_wy8awr3ULvKL_aaY7eKjACDGRkLoitrQwTCrhzUhw4mjXy4u3MSXAdefS6m8",
+    "imageUrl": "https://serverskins.com/images/musickits/music_31.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -251,7 +251,7 @@
     "id": 32,
     "name": "Beartooth, Aggressive",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuN36W90J6-5P81Qm1D0v0ncXjpHcDuqT5OfY1JKnHWjLFx7l147U8Fivhxxwj4W3Ty46ocyiJLlh39UDB3WA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_32.png",
     "stattrak": true,
     "stattrak_only": true
   },
@@ -259,7 +259,7 @@
     "id": 33,
     "name": "Blitz Kids, The Good Youth",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuN3ee8Ux-_YPn1Qm2D0j3zsK4rXYNt_T5avA7IajAVmWSlrgntOdtSSjjwkV_52vcn9z8cHyJLlh3QAIUPxY",
+    "imageUrl": "https://serverskins.com/images/musickits/music_33.png",
     "stattrak": true,
     "stattrak_only": true
   },
@@ -267,7 +267,7 @@
     "id": 34,
     "name": "Hundredth, FREE",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPW6Z4URw8JP81Qm2DxunzsWypXcL7qD4bf1vcfaXDT6Vmbol5eA8GH3hzU8l4WrSw92udXyJLlh3C_9f1qc",
+    "imageUrl": "https://serverskins.com/images/musickits/music_34.png",
     "stattrak": true,
     "stattrak_only": true
   },
@@ -275,7 +275,7 @@
     "id": 35,
     "name": "Neck Deep, Life's Not Out To Get You",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuO36U7lJw8ZfLugipR0_zzMCzqHsMvKSoOvI-I6XCV2GSlOxwtuNoSXzqxR5ysD-BmYuodmXXMFGQ36ERJg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_35.png",
     "stattrak": true,
     "stattrak_only": true
   },
@@ -283,7 +283,7 @@
     "id": 36,
     "name": "Roam, Backbone",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJ3SW6Gklpcnw7wC2GEujx5Cx-SQMuqSqOv01JKjCDWOSk7pz5rQxSiiwk0p36m2G1J_3JhtobOCh",
+    "imageUrl": "https://serverskins.com/images/musickits/music_36.png",
     "stattrak": true,
     "stattrak_only": true
   },
@@ -291,7 +291,7 @@
     "id": 37,
     "name": "Twin Atlantic, GLA",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIWye61dh-Ib6_lDkfk2g0Jez-HQLuqT3bPQ4cqfBXzXHlLci4-M-SSjjlEhx4DjQw4v9cy2WbgM-SswnmggWEWw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_37.png",
     "stattrak": true,
     "stattrak_only": true
   },
@@ -299,7 +299,7 @@
     "id": 38,
     "name": "Skog, III-Arena",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnCY4mklp8mm6w_lF0j3m8S0qXFY66D5PPU5I6iWDzPIl78is7VrFnrrwx505GqE1J_3JpXwBPe8",
+    "imageUrl": "https://serverskins.com/images/musickits/music_38.png",
     "stattrak": true,
     "stattrak_only": true
   },
@@ -307,7 +307,7 @@
     "id": 39,
     "name": "The Verkkars, EZ4ENCE",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIXOS81Nn_4z1-ErYEUy_ncG2pHQC66qtOfBsefHEWmTHkOgmtLRsSSq2w0ly4DvSmNipIy2TbRhgVMXK454YZg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_39.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -315,7 +315,7 @@
     "id": 40,
     "name": "Halo, The Master Chief Collection",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPXqb6mklpcn1vgC-FE_3ypOwqHsDuKOtOPFrdvTLXD6Wl-gk6eA4Tnuwlh8jtz7X1J_3JlK1Y0Yt",
+    "imageUrl": "https://serverskins.com/images/musickits/music_40.png",
     "stattrak": false,
     "stattrak_only": false
   },
@@ -323,7 +323,7 @@
     "id": 41,
     "name": "Scarlxrd: King, Scar",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJniW91pt5oPLugipR0z1m5fl-XUI7KP9OvY7cPPLXTLEkLcusuI7SXvgkER06j_Uydb7cmXXMFHBwRoo_g",
+    "imageUrl": "https://serverskins.com/images/musickits/music_41.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -331,7 +331,7 @@
     "id": 42,
     "name": "Half-Life: Alyx, Anti-Citizen",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPXeW6U9ty9elpA--FBihnMa3-3EMtqr-PvE9JKTDVmGUkrwg4LY6GC21zU9yt2yDw963MSXAJjr9su4",
+    "imageUrl": "https://serverskins.com/images/musickits/music_42.png",
     "stattrak": false,
     "stattrak_only": false
   },
@@ -339,7 +339,7 @@
     "id": 43,
     "name": "Austin Wintory, Bachram",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNG6E8V974476_lb1WCKhzNjjpSRZuKr3bqVveKjGVjGUl7d04uNqF3vhxk51smqEwtn4JymfbVN0FNIuEmZnQsKn",
+    "imageUrl": "https://serverskins.com/images/musickits/music_43.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -347,7 +347,7 @@
     "id": 44,
     "name": "Dren, Gunman Taco Truck",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMWmS62klpsmiuQ-zFh7ympPlrXQCvaf7bvU0dajKCjCTxLxy5eM-SyzmzEwmsmuH1J_3JsSHwbhj",
+    "imageUrl": "https://serverskins.com/images/musickits/music_44.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -355,7 +355,7 @@
     "id": 45,
     "name": "Daniel Sadowski, Eye of the Dragon",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMXqZ7FN554bw5U70ShTOzsKuqyBevaD_PvY_cqnBC2aSx-sitOA9Hy3iw0shsmrQm9n9cS_EO1UlD4wwG7C42cYiFA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_45.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -363,7 +363,7 @@
     "id": 46,
     "name": "Tree Adams and Ben Bromfield, M.U.D.D. FORCE",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIWmS4Fdx9Yrn1VviTx_jkZvm9CdX683-Oeo9ePOSVj-Tmegg5bFrGnvnk0p36jzWn938cX7CbQcmCpd3TOANs0O7jJS5YPSqCPlw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_46.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -371,7 +371,7 @@
     "id": 47,
     "name": "Tim Huling, Neo Noir",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIXKa7UN5_Ynz1Qm2D0igxpfhqyAPufGra_RpeKDKCzaVmLYi4LU4TH_lkxl34zvXyI2pcX6JLlh3SgiXjNY",
+    "imageUrl": "https://serverskins.com/images/musickits/music_47.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -379,7 +379,7 @@
     "id": 48,
     "name": "Sam Marshall, Bodacious",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnqa6Fdn54_15lXYEUy_zsPh-SEJtqCvbvBsIvOVCzGTxbh04uU-GSjlxU93sj_dyt6rcyrDPxhgVMX0GDfl6g",
+    "imageUrl": "https://serverskins.com/images/musickits/music_48.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -387,7 +387,7 @@
     "id": 49,
     "name": "Matt Levine, Drifter",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOHqD8Vpw4o7672a3EFOoycLiqXcL6qT-PvE5d_HCXT-VkLt35bU5GnDkxEtzsT6Bzd_4eS6fcEZ-XQTUt-o7",
+    "imageUrl": "https://serverskins.com/images/musickits/music_49.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -395,7 +395,7 @@
     "id": 50,
     "name": "Amon Tobin, All for Dust",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNHaY60J69o761Qm2D0_ymMLmpSACt_P_OfVrI6jHWTLHl-x05uAxSSyxxk5x5zzXmYn4cCmJLlh3qmNAx_w",
+    "imageUrl": "https://serverskins.com/images/musickits/music_50.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -403,7 +403,7 @@
     "id": 51,
     "name": "Darren Korb, Hades Music Kit",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPXqT4EVKpNa6vgi0EkugzcO2q3Nfu6D8OPc0JvXEXjeVkexw5OIxHn7lzUVx4mTRn8HpLyy5vFaXRw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_51.png",
     "stattrak": false,
     "stattrak_only": false
   },
@@ -411,7 +411,7 @@
     "id": 52,
     "name": "Neck Deep, The Lowlife Pack",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuO36U7lJw8ZfLugupRU2hm8W4_3AP66etafY1dfaXXTPEkL93tuI6GyvrwkkmsWXVmYuoI2XXMFG1wALONw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_52.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -419,7 +419,7 @@
     "id": 53,
     "name": "Scarlxrd, CHAIN$AW.LXADXUT.",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJniW91pt5oPLugupGBmnzcbkqCEPtqr6Oac-damWWGOVx750s7NsGyzhwR9x4T_XnN2qcmXXMFFfP0kuIw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_53.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -427,7 +427,7 @@
     "id": 54,
     "name": "Austin Wintory, Mocha Petal",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNG6E8V974476_lb1WCKhzdixpSQNvaP9avU8JfOQCmXBk7wl57Q9GCjkzR51sD_Syon7dH_DZgQpFNIuEpzXvuPa",
+    "imageUrl": "https://serverskins.com/images/musickits/music_54.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -435,7 +435,7 @@
     "id": 55,
     "name": "Chipzel, ~Yellow Magic~",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNnOe9Uxw-LikuxeyR0n1x5C1_HYPv_P3avI7eKDEDDSRkO135LFrSSzlxB8jtz7Rwtz6bzvJOed42IOv",
+    "imageUrl": "https://serverskins.com/images/musickits/music_55.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -443,7 +443,7 @@
     "id": 56,
     "name": "Freaky DNA, Vici",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuM2mS5F1s8In11Qm2D0Snn5DhqXII6aevMaE9cqPHXj-VmbYi6bc6GXDgw0wl5zvQz9j_dX-JLlh3U7PBHho",
+    "imageUrl": "https://serverskins.com/images/musickits/music_56.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -451,7 +451,7 @@
     "id": 57,
     "name": "Jesse Harlin, Astro Bellum",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuP36E9lN99ZX441fYEUy_xsC5pSMIvfGqbaZvJfXCWDXClO0k47BrTi3ml0l14W_QzI6tJS3CbBhgVMVNIuoA8w",
+    "imageUrl": "https://serverskins.com/images/musickits/music_57.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -459,7 +459,7 @@
     "id": 58,
     "name": "Laura Shigihara: Work Hard, Play Hard",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOXqC91dm_I7z41HmUxzOzseuqyFY66CqOf09dKXAXjDHkr8n5eNoF3Gwxx4lsW7dw4uqJSqTaFJ2CYwwG7C58tQJhA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_58.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -467,7 +467,7 @@
     "id": 59,
     "name": "Sarah Schachner, KOLIBRI",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnqF5F5m94_16VHpRA_OzseuqCMO7feoO_Q9IaTHCD-WlLp0sbJtF3jkx0lysD_WyImvdy-WPQ4lXIwwG7Cq-4RO3A",
+    "imageUrl": "https://serverskins.com/images/musickits/music_59.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -475,7 +475,7 @@
     "id": 60,
     "name": "bbno$, u mad!",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuN3mZ6kVKpNa6vgjlRByknJOw-CEK7KP_bPZrefPGVmSTk7py4bY8Tivlx0Vw4z_SzsHpLyyu3lGzoA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_60.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -483,7 +483,7 @@
     "id": 61,
     "name": "The Verkkars & n0thing, Flashbang Dance",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIXOS81Nn_4z1-ErYEU-_zcS5rXEP7KT2PvU_JaiVXjeWkegn6OQ7Hy3klEVztWqByI2veX2VaRhgVMWDR-PWmQ",
+    "imageUrl": "https://serverskins.com/images/musickits/music_61.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -491,7 +491,7 @@
     "id": 62,
     "name": "3kliksphilip, Heading for the Source",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuZnCb7F1m5I_95lD3fk2g0MW3q3IKvqr4P6BsJPHHXjeSkLl147Q-GH3rkU5z5z7UztaoIHmfZgc-SswnBcYXqSs",
+    "imageUrl": "https://serverskins.com/images/musickits/music_62.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -499,7 +499,7 @@
     "id": 63,
     "name": "Humanity's Last Breath, Void",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPXeV2gYkutf2ugHjR0T1yc7ir3EL6aD4av1od_WRWmHIxe134bBvHXDrl053tjvLioH-59nm0rc",
+    "imageUrl": "https://serverskins.com/images/musickits/music_63.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -507,7 +507,7 @@
     "id": 64,
     "name": "Juelz, Shooters",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuP26S6UxKpNa6ul2yGE3zzZLkqyEOt_asafQ4dPWWXjeWlLx36LA_GnDlwx8isW7UysHpLyxdw4RVEg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_64.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -515,7 +515,7 @@
     "id": 65,
     "name": "Knock2, dashstar*",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPnWY5l0ny9elpFuwQhugx8G0qXVavqT_avw_I6HCDT-Vk-oi5rFtGnjjkBxy6zyGmNu3MSXAuEzdSoI",
+    "imageUrl": "https://serverskins.com/images/musickits/music_65.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -523,7 +523,7 @@
     "id": 66,
     "name": "Meechy Darko, Gothic Luxury",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOH6S5l5s8Ibm4VbYEUy_y5Li-HsC6fT2afZoJqnKXDWUmbp3s7c4TSyxzB4j5WXQzduvI3OfaBhgVMWCMDEthw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_66.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -531,7 +531,7 @@
     "id": 67,
     "name": "Sullivan King, Lock Me Up",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJm6b6V9j9Yn_41fgfk2g0MG3rXUMvfH3OKc8IfOVXTPJxbwgs-BqTSuykUwm6mvTm9erdHmTbVU-SswnLnCCc2g",
+    "imageUrl": "https://serverskins.com/images/musickits/music_67.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -539,7 +539,7 @@
     "id": 68,
     "name": "Perfect World, 花脸 Hua Lian (Painted Face)",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJX6F41N24JD7-FXjfk2g0MLlqScOt6L7PPxrdfTLX2HDkbgi4OM7TX2wkRsm6j-Ewor8InueOwY-Sswnc1NbBcg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_68.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -547,7 +547,7 @@
     "id": 69,
     "name": "Denzel Curry, ULTIMATE",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMX6Z_1N595Lm-EDYEUy_ncCzrXpZ6qf_avA9I6bADTeRxep05bA7SS-1wBl1sGTSy9z4Ii7EPxhgVMXpTAlXoQ",
+    "imageUrl": "https://serverskins.com/images/musickits/music_69.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -555,7 +555,7 @@
     "id": 70,
     "name": "Valve, CS:GO",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuI3qb81NKpNa66wu1Qx-mm8Kx-CYC6aD2bv0-IfPFWGHIkegh5LY4GXzlxU905W7UwsHpLywWgep6oQ",
+    "imageUrl": "https://serverskins.com/images/musickits/music_70.png",
     "stattrak": false,
     "stattrak_only": false
   },
@@ -563,7 +563,7 @@
     "id": 71,
     "name": "DRYDEN, Feel The Power",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMWmO4VN7y9elpAiyEUynyZSwrSMOu6v-MaI8cqjCDzXIluwmtLRtHy2wzB4mtzuDyNi3MSXAPV825k0",
+    "imageUrl": "https://serverskins.com/images/musickits/music_71.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -571,7 +571,7 @@
     "id": 72,
     "name": "ISOxo, inhuman",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPGiY_VlKpNa671zmERmmy5Pi_3YMtqr5aqBpJaXFWGSRlL916LUxGS3nwBwk52TUz8HpLyyhdGnKfw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_72.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -579,7 +579,7 @@
     "id": 73,
     "name": "KILL SCRIPT, All Night",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPnKb6UV25o7k_ma3EFPym86wqSAKu_H7PKE4JKiWV2GVx71z57k6Sy3hzURwsWjXyouod3KfcEZ-XaDU2Jmf",
+    "imageUrl": "https://serverskins.com/images/musickits/music_73.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -587,7 +587,7 @@
     "id": 74,
     "name": "Knock2, Make U SWEAT!",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPnWY5l0ny9empA21F0ijnMS3rXoO6qv2Oac4cKfDXz-Uw7p0tLk9TXHllkVx5W2HzNa3MSXAGLCr2ac",
+    "imageUrl": "https://serverskins.com/images/musickits/music_74.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -595,7 +595,7 @@
     "id": 75,
     "name": "Rad Cat, Reason",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJ3qT5ldhy9elpFq0FEmgzpDh-3INuaqtaqU0cKmWCzSSlr9ysrI_TCq1xx5ztmqDyd23MSXAcELeXMM",
+    "imageUrl": "https://serverskins.com/images/musickits/music_75.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -603,7 +603,7 @@
     "id": 76,
     "name": "TWERL, Ekko & Sidetrack, Under Bright Lights",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIWyS91pKpNa6s13lE0-jn8-1pXJauqf4O_xrdaLHDzPBwugh4bgwGHvjxR9-4G6HnMHpLyxvON_2ZA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_76.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -611,7 +611,7 @@
     "id": 78,
     "name": "Austin Wintory, The Devil Went Clubbing In Georgia",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNG6E8V974476_lb1WCKhytiwpXNYv_aoO6JoI6DGWDKSkb9ytONsTSvhzU505z-BzoyvdX3Da1MnFNIuEmHVT0Jg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_78.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -619,7 +619,7 @@
     "id": 79,
     "name": "Ben Bromfield, Rabbit Hole",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuN36Z50R6-YH971Xjfk2g0MGw_nMJvKWtO6I9eaDCDWbJxO0utLI6TXjrzU934W6An46vdXqUPFc-Sswnvkalcgc",
+    "imageUrl": "https://serverskins.com/images/musickits/music_79.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -627,7 +627,7 @@
     "id": 80,
     "name": "Daniel Sadowski, Dead Shot",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMXqZ7FN554bw5U70ShTOzsOuqnACvKD5P6Fpd6SWCGPFlu0u4eA_SyqwzEwmsTvQyNapdi_CPFMlDYwwG7Abj54DYw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_80.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -635,7 +635,7 @@
     "id": 81,
     "name": "Dren McDonald, Coffee! Kofe! Kahveh!",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMWmS62klp8n3vQjkFkXymJe4-Xtavqf6bvM_dqOSC2PBlr8us7JtTH_rx0Ul5m3V1J_3JsxLaZwf",
+    "imageUrl": "https://serverskins.com/images/musickits/music_81.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -643,7 +643,7 @@
     "id": 82,
     "name": "Matt Levine, Agency",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuOHqD8Vpw4o7672a3E1OnyJezrnNdu6r7bvNrI_HKVmGUw7h34eM8Hn_lxEVw6zuEyYqqd3vEcEZ-XfK-tm-7",
+    "imageUrl": "https://serverskins.com/images/musickits/music_82.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -651,7 +651,7 @@
     "id": 83,
     "name": "Sam Marshall, Clutch",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnqa6Fdn54_15lXYEU-_zJe0qnYJ66utOvI0c6LLWz7AmL8u4Lc9S3zjwUxwtW_dmdascCqSPxhgVMUkssBXcw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_83.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -659,7 +659,7 @@
     "id": 84,
     "name": "Tim Huling, Devil's Paintbrush",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIXKa7UN5_Ynz1Qm1D0Six8Lh-SMDu6r5O6c8eaPBWzHJmb4i4-doFnvmxRl2tzvQy4yhJH2JLlh3Dy1Dksc",
+    "imageUrl": "https://serverskins.com/images/musickits/music_84.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -667,7 +667,7 @@
     "id": 85,
     "name": "Tree Adams, Seventh Moon",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIWmS4Fdx9Yrn1Qm2Dxz3zcKy-XFYv6P4PPQ_eaHCVjOSmep35rRrF32wwBh042vSmYmoInmJLlh3TYKTTis",
+    "imageUrl": "https://serverskins.com/images/musickits/music_85.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -675,7 +675,7 @@
     "id": 86,
     "name": "Perfect World, Ay Hey",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJX6F41N24JD7-FXjfk2j0M7ir3QOvKb8P6A1cPSSXzKSkbl14eU-GCu3x0V24jvWzo6veXuUbAQ-SswnjV5YWxY",
+    "imageUrl": "https://serverskins.com/images/musickits/music_86.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -683,7 +683,7 @@
     "id": 87,
     "name": "Adam Beyer, Red Room",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNH-W6FRw7YLm1Qm2D0ypm86w-CcL6vT-OP05caHDWmHHmOh35eI5HS_jwE4msmTXwtepcniJLlh3Piv7u7I",
+    "imageUrl": "https://serverskins.com/images/musickits/music_87.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -691,7 +691,7 @@
     "id": 88,
     "name": "Ghost, Skeletá",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuMnOY9kJKpNa6uwzmFkT1zMHlpXMMvKv5Oqc0caHBX2bCmb8ltbIxH37klE0h4W_cm8HpLyyghyHkLA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_88.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -699,7 +699,7 @@
     "id": 89,
     "name": "HEALTH, RAT WARS",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPX6W6UJ9y9elpAHkF0_wz8C5r3BeuvH4Pfw8IaPACzWSmbkgtrI6Hy2xwBh34mrcyt63MSXA80s-Xh8",
+    "imageUrl": "https://serverskins.com/images/musickits/music_89.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -707,7 +707,7 @@
     "id": 90,
     "name": "James and the Cold Gun, Chewing Glass",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuP3qa4EV0-oPg4lzkThH1mYPuwnIKofD-PPxseajKDTCTkbgg6OI4TCzmxURw42yDzI6hcy-ebgN1XJEiQ-MU8k7vPe1y5g0",
+    "imageUrl": "https://serverskins.com/images/musickits/music_90.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -715,7 +715,7 @@
     "id": 91,
     "name": "Jonathan Young, Starship Velociraptor",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuP3SZ5EJ99Ynt5UzpRiKhz9i0-3YCvvD7P_xrJanECDWTme0m5-drHn7hwkpw52zTzYv9cH2eOA4nFNIuEiP11Fka",
+    "imageUrl": "https://serverskins.com/images/musickits/music_91.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -723,7 +723,7 @@
     "id": 92,
     "name": "Juelz, Floorspace",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuP26S6UxKpNW661yyF0Xwyc7kryMIuqCtOqdudaPEDTeUw-11seQ4H3G3zRwk4DuGn8HpLyxF_Gg6fw",
+    "imageUrl": "https://serverskins.com/images/musickits/music_92.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -731,7 +731,7 @@
     "id": 93,
     "name": "Killer Mike, MICHAEL",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuPnKb6VNn-Y7_72a3EFOlz8biqnRd6ab3bvA_cvTDC2XImOwi4-U8S37nxk5y5D7Sw9v9I37DcEZ-XeFRCz_X",
+    "imageUrl": "https://serverskins.com/images/musickits/music_93.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -739,7 +739,7 @@
     "id": 94,
     "name": "PVRIS, Evergreen",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJW2F7EVKpNa671jlEk-pmpLj-HtZ6qv8Ofc6JaWRXGTIw750srVqSXCwlBgi423XmMHpLywuexEzEA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_94.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -747,7 +747,7 @@
     "id": 95,
     "name": "Selective Response, No Love Only Pleasure",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJn6b4FVh_ZHx-Fz0URL_jZPfrXMVtqH2a_Q0cfLBDWbJk-p0sbNoHnrmxx8m42jdy9f7InieOgciDZZ1EPlK7EehqW9d7Q",
+    "imageUrl": "https://serverskins.com/images/musickits/music_95.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -755,7 +755,7 @@
     "id": 96,
     "name": "Tigercub, The Perfume of Decay",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuIXKQ4ER24YXLugipQEn0mpPl_icD6qD4a6c7I6XGWTbFx7ZysbIxG3C3zEtz4G6BmImoImXXMFEshFifrQ",
+    "imageUrl": "https://serverskins.com/images/musickits/music_96.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -763,7 +763,7 @@
     "id": 98,
     "name": "ALRT, DOPAMINE HIT",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNHeF8Wklpcmtu120GR6hy8O5-3MJ7Pb6PaY_I_bBXjHJmbd1s7Y8FyrkwEty5jjS1J_3JrXfbNYF",
+    "imageUrl": "https://serverskins.com/images/musickits/music_98.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -771,7 +771,7 @@
     "id": 99,
     "name": "Altare, Change My Mind",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuNHeD5ERwy9elpFq3Fx6hmJLlrHAJv_eqOKI1JKSVWDXGkLovtLJoF3Hik00htTzWyt-3MSXAv8iGC0E",
+    "imageUrl": "https://serverskins.com/images/musickits/music_99.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -779,7 +779,7 @@
     "id": 100,
     "name": "borne, Give It To Me",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuN3SF61NKpNa66VrjQhigmpCx-Xdf7qWvO_0_IfHBCmHCkrcm6LgwS3vkzUlzsD_Vm8HpLywQpLob3g",
+    "imageUrl": "https://serverskins.com/images/musickits/music_100.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -787,7 +787,7 @@
     "id": 101,
     "name": "Pirapus, EVERYNITE",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJXKF5EZg57ikuxewRUmkmMaw_yZY6qf3OPY6JKeRD2XIk78m5udtS3G1xhx-tT-Hy96obzvJOYRCqud0",
+    "imageUrl": "https://serverskins.com/images/musickits/music_101.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -795,7 +795,7 @@
     "id": 102,
     "name": "Repiet & Julia Kleijn, On And On",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJ36H7FNhy9elpFu3QkXyyZe3pHcI6_D8bPI0cvLCXzTCw7ovs7RtGXjhzEl-6z6Emda3MSXAtLvhCgA",
+    "imageUrl": "https://serverskins.com/images/musickits/music_102.png",
     "stattrak": true,
     "stattrak_only": false
   },
@@ -803,7 +803,7 @@
     "id": 103,
     "name": "ShockOne, Voices",
     "rarity": "milspec",
-    "imageUrl": "https://community.akamai.steamstatic.com/economy/image/i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttyVfPaERSR0Wqmu7LAocGIijyEKzb_3d19nuJnOY5l16-oLLugipEE7zmM63-SFfuKv-MPc6eKfLWDHJk74l6eJoHC23zEh-t2yHyN_7dWXXMFFiTTCrFg",
+    "imageUrl": "https://serverskins.com/images/musickits/music_103.png",
     "stattrak": true,
     "stattrak_only": false
   }
