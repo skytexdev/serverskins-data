@@ -36,7 +36,7 @@ if (!fs.existsSync(BACKEND)) {
 }
 const cat = name => {
   const p = path.join(CATALOG, name);
-  if (!fs.existsSync(p)) throw new Error(`HATA: katalog dosyası yok: ${p} — önce build.mjs çalıştır`);
+  if (!fs.existsSync(p)) throw new Error(`HATA: katalog dosyası yok: ${p} — önce update-from-game.mjs çalıştır`);
   return JSON.parse(fs.readFileSync(p, 'utf8'));
 };
 const readJson = p => JSON.parse(fs.readFileSync(p, 'utf8'));

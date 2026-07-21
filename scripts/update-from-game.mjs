@@ -1,29 +1,31 @@
 #!/usr/bin/env node
 // ============================================================================
-// serverskins-data — otomatik güncelleyici (TEK KOMUT)
+// serverskins-data — otomatik güncelleyici (TEK KOMUT, Valve-direkt)
 // ----------------------------------------------------------------------------
 // CS2 güncellemesi gelince:  node scripts/update-from-game.mjs
 //
-// Akış:
-//   [1] SteamDatabase/GameTracking-CS2 steam.inf → oyun sürümü; değişmediyse
-//       (ve --force yoksa) "güncel" deyip çıkar.
-//   [2] Ham kaynakları indirir:
-//         raw/game/ : items_game.txt, csgo_english.txt (GameTracking-CS2),
-//                     csgo_turkish.json (counter-strike-file-tracker),
-//                     images.json + default_generated.json (counter-strike-image-tracker),
-//                     version.json (steam.inf özeti)
-//         raw/en/   : ByMykel/CSGO-API snapshot yenilenir (birincil kaynak)
-//   [3] scripts/build.mjs çalıştırılır → catalog/ (ByMykel'den, birincil)
-//   [4] items_game.txt + csgo_english.txt KeyValues parse edilir →
-//       catalog-game/ (Valve verisinden BAĞIMSIZ ikincil üretim, aynı şema)
-//       + catalog-game/names.tr.json (Türkçe isimler, csgo_turkish.json'dan)
-//   [5] catalog/ ile catalog-game/ tutarlılık raporu →
-//       catalog-game/consistency-report.json + konsol özeti
-//   [6] Yeni eklenen itemler konsola listelenir (önceki catalog/ id'leriyle diff)
-//   [7] Değişiklik varsa git commit + push ("Auto-update: CS2 <sürüm>"),
-//       yoksa "güncel". (--no-git ile atlanır; git yoksa GÖRÜNÜR hata verir)
+// TEK KAYNAK: Valve CS2 oyun dosyaları (SteamDatabase/GameTracking-CS2):
+//   items_game.txt + csgo_english.txt + csgo_turkish.txt.
+// Hiçbir üçüncü-taraf katalog/görsel aynası kullanılmaz.
 //
-// Bağımlılık YOK. Sessiz fallback YOK: eşlenemeyen kayıtlar raporda listelenir.
+// Akış:
+//   [1] steam.inf → oyun sürümü; değişmediyse (ve --force yoksa) "güncel" der, çıkar.
+//   [2] Ham Valve kaynakları indirilir: items_game.txt, csgo_english.txt,
+//       csgo_turkish.txt (+ version.json).
+//   [3] items_game.txt + csgo_*.txt KeyValues parse edilir → catalog/ üretilir
+//       (silah/bıçak/eldiven/ajan/sticker/keychain/müzik/koleksiyon) +
+//       catalog/names.tr.json (Türkçe isimler, csgo_turkish.txt'ten).
+//       Görsel URL'leri: mevcut catalog/'daki gerçek URL'ler korunur; yeni item
+//       için görsel yoksa imageUrl = null (GÖRÜNÜR eksik — sessiz fallback yok).
+//       Silah/bıçak/eldiven mevcut katalog üzerine EKLEMELİ işlenir (hiçbir kayıt
+//       silinmez); sticker/keychain/müzik/koleksiyon/ajan items_game'den bütün
+//       olarak yeniden üretilir (bu tablolar oyunda eksiksizdir).
+//   [4] Önceki catalog/ id'leriyle diff → yeni eklenen item'ler konsola.
+//   [5] Değişiklik varsa git commit + push ("Auto-update: CS2 <sürüm>"),
+//       yoksa "güncel". (--no-git ile atlanır; git yoksa GÖRÜNÜR hata verir.)
+//
+// Bağımlılık YOK (saf Node + yerel keyvalues.mjs). Sessiz fallback YOK:
+// eşlenemeyen/rarity'siz/isimsiz kayıtlar raporda listelenir.
 // ============================================================================
 
 import fs from 'fs';
@@ -34,30 +36,22 @@ import { parseKeyValues } from './keyvalues.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const RAW_GAME = path.join(ROOT, 'raw', 'game');
-const RAW_EN = path.join(ROOT, 'raw', 'en');
 const CATALOG = path.join(ROOT, 'catalog');
-const OUT = path.join(ROOT, 'catalog-game');
 
 const FORCE = process.argv.includes('--force');
 const NO_GIT = process.argv.includes('--no-git');
 const GIT = process.env.GIT_EXE || 'git';
 
-// --- Kaynak URL'ler -----------------------------------------------------------
+// --- Kaynak URL'ler (yalnızca Valve / GameTracking-CS2) -----------------------
 const GT = 'https://raw.githubusercontent.com/SteamDatabase/GameTracking-CS2/master';
 const URLS = {
   steamInf: `${GT}/game/csgo/steam.inf`,
   itemsGame: `${GT}/game/csgo/pak01_dir/scripts/items/items_game.txt`,
   csgoEnglish: `${GT}/game/csgo/pak01_dir/resource/csgo_english.txt`,
-  csgoTurkish: 'https://raw.githubusercontent.com/ByMykel/counter-strike-file-tracker/main/static/csgo_turkish.json',
-  imagesJson: 'https://raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/images.json',
-  defaultGenerated: 'https://raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/default_generated.json'
+  csgoTurkish: `${GT}/game/csgo/pak01_dir/resource/csgo_turkish.txt`
 };
-const IMG_TRACKER = 'https://raw.githubusercontent.com/ByMykel/counter-strike-image-tracker/main/static/panorama/images';
-const BYMYKEL = 'https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en';
-const BYMYKEL_FILES = ['skins.json', 'skins_not_grouped.json', 'stickers.json', 'keychains.json',
-  'agents.json', 'music_kits.json', 'collectibles.json', 'crates.json', 'base_weapons.json'];
 
-// --- build.mjs ile paylaşılan eşleme tabloları --------------------------------
+// --- Eşleme tabloları ---------------------------------------------------------
 const RARITY_ITEM = {
   rarity_default: 'consumer', rarity_common: 'consumer', rarity_rare: 'milspec',
   rarity_mythical: 'restricted', rarity_legendary: 'classified',
@@ -107,12 +101,12 @@ const AGENT_GROUPS = {
 const GLOVE_ITEMS = new Set(['studded_bloodhound_gloves', 'slick_gloves', 'leather_handwraps',
   'motorcycle_gloves', 'specialist_gloves', 'sporty_gloves', 'studded_hydra_gloves',
   'studded_brokenfang_gloves']);
-// ByMykel'in belgelenmiş istisnaları (kaynak: services/*.js):
-const STICKER_SKIP_IDS = new Set(['232', '234', '235', '236']); // DreamHack 2014'te hiç dağıtılmayanlar
+// Oyunun belgelenmiş istisnaları (items_game davranışıyla birebir):
+const STICKER_SKIP_IDS = new Set(['232', '234', '235', '236']); // DreamHack 2014'te hiç dağıtılmadı
 const COLLECTIBLE_SKIP_IDS = new Set(['5180']); // Redacted Map Coin (Transit)
 const MUSIC_STATTRAK_ONLY = new Set(['beartooth_02', 'blitzkids_01', 'hundredth_01',
   'neckdeep_01', 'roam_01', 'twinatlantic_01', 'skog_03']); // yalnız StatTrak satıldı
-const RARITY_HARDCODED = { // ByMykel loadRarities hardCoded ile birebir
+const RARITY_HARDCODED = { // oyunda sabit kodlu (loot list'te türetilemeyen) rarity'ler
   '[cu_m4a1_howling]weapon_m4a1': 'contraband',
   '[cu_retribution]weapon_elite': 'milspec',
   '[cu_mac10_decay]weapon_mac10': 'restricted',
@@ -162,10 +156,10 @@ const readJsonIf = p => fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')
 // Ana akış
 // ---------------------------------------------------------------------------
 
-console.log('— serverskins-data otomatik güncelleyici —');
+console.log('— serverskins-data otomatik güncelleyici (Valve-direkt) —');
 
 // [1] Sürüm kontrolü
-console.log('[1/7] Oyun sürümü kontrol ediliyor...');
+console.log('[1/5] Oyun sürümü kontrol ediliyor...');
 const infBuf = await download(URLS.steamInf, path.join(RAW_GAME, 'steam.inf'));
 const inf = parseSteamInf(decodeText(infBuf));
 const version = {
@@ -183,40 +177,23 @@ if (!FORCE && prevVersion && prevVersion.ClientVersion === version.ClientVersion
   process.exit(0);
 }
 
-// [2] Kaynaklar
-console.log('[2/7] Ham kaynaklar indiriliyor...');
+// [2] Ham Valve kaynakları
+console.log('[2/5] Ham Valve kaynakları indiriliyor...');
 const igBuf = await download(URLS.itemsGame, path.join(RAW_GAME, 'items_game.txt'));
 console.log('  items_game.txt indi');
 const engBuf = await download(URLS.csgoEnglish, path.join(RAW_GAME, 'csgo_english.txt'));
 console.log('  csgo_english.txt indi');
-const trBuf = await download(URLS.csgoTurkish, path.join(RAW_GAME, 'csgo_turkish.json'));
-console.log('  csgo_turkish.json indi');
-const imagesBuf = await download(URLS.imagesJson, path.join(RAW_GAME, 'images.json'));
-console.log('  images.json indi');
-const dgBuf = await download(URLS.defaultGenerated, path.join(RAW_GAME, 'default_generated.json'));
-console.log('  default_generated.json indi');
-for (const f of BYMYKEL_FILES) {
-  await download(`${BYMYKEL}/${f}`, path.join(RAW_EN, f));
-}
-console.log(`  ByMykel snapshot yenilendi (${BYMYKEL_FILES.length} dosya)`);
+const trBuf = await download(URLS.csgoTurkish, path.join(RAW_GAME, 'csgo_turkish.txt'));
+console.log('  csgo_turkish.txt indi');
 writeJson(path.join(RAW_GAME, 'version.json'), { ...version, fetched_at: new Date().toISOString() });
 
-// meta.json güncelle (ByMykel commit sha — alınamazsa null + görünür uyarı)
-let bymykelSha = null, bymykelDate = null;
-try {
-  const r = await fetch('https://api.github.com/repos/ByMykel/CSGO-API/commits/main', {
-    headers: { 'User-Agent': 'serverskins-data' }
-  });
-  if (r.ok) { const c = await r.json(); bymykelSha = c.sha; bymykelDate = c.commit?.committer?.date ?? null; }
-} catch { /* aşağıda uyarı */ }
-if (!bymykelSha) console.log('  UYARI: ByMykel commit sha alınamadı (GitHub API) — meta.source_commit=null yazılıyor');
+// meta.json güncelle (kaynak: Valve CS2 oyun dosyaları)
 const prevMeta = readJsonIf(path.join(ROOT, 'raw', 'meta.json')) || {};
 writeJson(path.join(ROOT, 'raw', 'meta.json'), {
   ...prevMeta,
-  source: 'ByMykel/CSGO-API',
-  source_url: 'https://github.com/ByMykel/CSGO-API',
-  source_commit: bymykelSha,
-  source_commit_date: bymykelDate,
+  source: 'Valve CS2 game files',
+  source_url: 'https://github.com/SteamDatabase/GameTracking-CS2',
+  source_files: ['items_game.txt', 'csgo_english.txt', 'csgo_turkish.txt'],
   fetched_at: new Date().toISOString(),
   game_version: version
 });
@@ -240,13 +217,8 @@ function catalogIdSets() {
 }
 const beforeIds = catalogIdSets();
 
-// [3] Birincil katalog (ByMykel) yeniden üret
-console.log('[3/7] catalog/ yeniden üretiliyor (build.mjs, ByMykel birincil)...');
-const buildRes = spawnSync(process.execPath, [path.join(ROOT, 'scripts', 'build.mjs')], { stdio: 'inherit' });
-if (buildRes.status !== 0) throw new Error('HATA: build.mjs başarısız — üretim durduruldu');
-
-// [4] Bağımsız ikincil üretim (items_game + csgo_english)
-console.log('[4/7] catalog-game/ üretiliyor (Valve verisinden bağımsız)...');
+// [3] catalog/ üretimi (Valve KeyValues)
+console.log('[3/5] catalog/ üretiliyor (items_game.txt + csgo_*.txt)...');
 
 const igRoot = parseKeyValues(decodeText(igBuf));
 const ig = igRoot.items_game || igRoot;
@@ -258,10 +230,10 @@ const engTokens = engRoot.lang?.Tokens || engRoot.lang?.tokens;
 if (!engTokens) throw new Error('HATA: csgo_english.txt beklenen yapıda değil (lang.Tokens yok)');
 const EN = new Map(Object.entries(engTokens).map(([k, v]) => [k.toLowerCase(), v]));
 
-// Türkçe tokenlar (file-tracker JSON formatı)
-const trJson = JSON.parse(decodeText(trBuf));
-const trTokens = trJson.lang?.Tokens || trJson.lang?.tokens || trJson.Tokens || trJson.tokens;
-if (!trTokens) throw new Error('HATA: csgo_turkish.json beklenen yapıda değil');
+// Türkçe tokenlar (Valve csgo_turkish.txt — csgo_english ile aynı KeyValues yapısı)
+const trRoot = parseKeyValues(decodeText(trBuf));
+const trTokens = trRoot.lang?.Tokens || trRoot.lang?.tokens;
+if (!trTokens) throw new Error('HATA: csgo_turkish.txt beklenen yapıda değil (lang.Tokens yok)');
 const TR = new Map(Object.entries(trTokens).map(([k, v]) => [k.toLowerCase(), v]));
 
 const t = (map, token) => {
@@ -270,14 +242,34 @@ const t = (map, token) => {
   return map.get(key) ?? null;
 };
 
-const cdnImages = JSON.parse(decodeText(imagesBuf));
-const img = p => {
-  if (!p) return null;
-  const key = p.toLowerCase();
-  return cdnImages[key] ?? `${IMG_TRACKER}/${key}_png.png`;
+// --- Mevcut catalog/ görsellerini (gerçek Steam CDN URL'leri) koru ------------
+const existing = {
+  weapons: readJsonIf(path.join(CATALOG, 'weapons.json')) || {},
+  knives: readJsonIf(path.join(CATALOG, 'knives.json')) || {},
+  gloves: readJsonIf(path.join(CATALOG, 'gloves.json')) || {},
+  agents: readJsonIf(path.join(CATALOG, 'agents.json')) || {},
+  stickers: readJsonIf(path.join(CATALOG, 'stickers.json')) || [],
+  keychains: readJsonIf(path.join(CATALOG, 'keychains.json')) || [],
+  musickits: readJsonIf(path.join(CATALOG, 'musickits.json')) || [],
+  collectibles: readJsonIf(path.join(CATALOG, 'collectibles.json')) || []
 };
+const imgIndex = { skins: new Map(), stickers: new Map(), keychains: new Map(), musickits: new Map(), collectibles: new Map(), agents: new Map() };
+for (const bucket of ['weapons', 'knives', 'gloves']) {
+  for (const [k, v] of Object.entries(existing[bucket])) {
+    for (const s of v.skins || []) if (s.imageUrl) imgIndex.skins.set(`${k}#${s.skinId}`, s.imageUrl);
+  }
+}
+for (const t2 of Object.values(existing.agents)) for (const g of Object.values(t2)) for (const s of g.skins || []) {
+  if (s.imageUrl) imgIndex.agents.set(String(s.skinId), s.imageUrl);
+}
+for (const flat of ['stickers', 'keychains', 'musickits', 'collectibles']) {
+  for (const s of existing[flat]) if (s.imageUrl) imgIndex[flat].set(String(s.id), s.imageUrl);
+}
+// Görsel: yalnızca daha önce çözülmüş gerçek URL korunur; yoksa null (görünür eksik)
+const imgSkin = (ourKey, skinId) => imgIndex.skins.get(`${ourKey}#${skinId}`) ?? null;
+const imgFlat = (kind, id) => imgIndex[kind].get(String(id)) ?? null;
 
-// prefab zinciri (2 seviye — ByMykel loadPrefabs ile aynı)
+// prefab zinciri (2 seviye)
 const prefabs = {};
 for (const [key, value] of Object.entries(ig.prefabs || {})) {
   const inner = ig.prefabs[value?.prefab] || {};
@@ -311,7 +303,7 @@ for (const [idx, pk] of Object.entries(ig.paint_kits || {})) {
 }
 
 // rarity haritası: "[paint]weapon" (lowercase) -> bizim rarity
-const rarities = { };
+const rarities = {};
 for (const [k, v] of Object.entries(RARITY_HARDCODED)) rarities[k] = v;
 for (const [listName, entries] of Object.entries(ig.client_loot_lists || {})) {
   const suffix = listName.split('_').pop();
@@ -348,7 +340,7 @@ for (const [setKey, set] of Object.entries(ig.item_sets || {})) {
   }
 }
 
-// stattrak: ByMykel loadStattrakSkins portu
+// stattrak anahtarları (weapon_case içeren crate set'leri + iki sabit)
 const stattrakKeys = new Set(['[cu_m4a1_howling]weapon_m4a1', '[cu_xray_p250]weapon_p250']);
 {
   const crateSets = new Set();
@@ -369,7 +361,7 @@ const stattrakKeys = new Set(['[cu_m4a1_howling]weapon_m4a1', '[cu_xray_p250]wea
   }
 }
 
-// Doppler fazı (paint adından — yalnız doppler/marbleized ailesi)
+// Doppler fazı (paint adından)
 function detectPhase(paintName) {
   const n = paintName.toLowerCase();
   const isFamily = n.includes('doppler') || n.includes('marbleized');
@@ -383,30 +375,35 @@ function detectPhase(paintName) {
   return null;
 }
 
-// --- Silah/bıçak/eldiven üretimi (default_generated ikon listesinden) --------
-const report = { unmatchedIcons: [], missingRarity: [], missingName: [], skippedChicken: 0 };
-
-const defaultGenerated = JSON.parse(decodeText(dgBuf));
-// Aday item adları (uzun ad önce eşleşsin diye uzunluğa göre sıralı)
-const wearableNames = Object.keys(items)
-  .filter(n => n.startsWith('weapon_') || GLOVE_ITEMS.has(n))
-  .sort((a, b) => b.length - a.length);
-
-const weaponsOut = {}, knivesOut = {}, glovesOut = {};
+const report = { unmatchedKeys: [], missingRarity: [], missingName: [] };
 const trNames = { skins: {}, stickers: {}, keychains: {}, musickits: {}, collectibles: {}, agents: {} };
 
-for (const file of defaultGenerated) {
-  if (!file.endsWith('_light_png.png')) continue;
-  if (file.includes('pet_hen_1_hen')) { report.skippedChicken++; continue; }
-  const base = file.replace('_light_png.png', '');
+// --- Silah/bıçak/eldiven: mevcut katalog üzerine EKLEMELİ --------------------
+// Kaynak kombinasyon evreni: items_game client_loot_lists + item_sets içindeki
+// tüm "[paint]item" anahtarları (oyunda dağıtılan/dağıtılmış skinler). Mevcut
+// katalogdaki hiçbir kayıt silinmez; yalnızca eksik olanlar eklenir.
+const weaponsOut = JSON.parse(JSON.stringify(existing.weapons));
+const knivesOut = JSON.parse(JSON.stringify(existing.knives));
+const glovesOut = JSON.parse(JSON.stringify(existing.gloves));
 
-  const itemName = wearableNames.find(n => base.startsWith(n + '_'));
-  if (!itemName) { report.unmatchedIcons.push(file); continue; }
-  const paintName = base.slice(itemName.length + 1).toLowerCase();
+const skinKeys = new Map(); // lootKey(lower) -> { paintName, itemName }
+const addKey = raw => {
+  const key = String(raw).toLowerCase();
+  const m = key.match(/^\[([^\]]+)\](.+)$/);
+  if (m) skinKeys.set(key, { paintName: m[1], itemName: m[2] });
+};
+for (const entries of Object.values(ig.client_loot_lists || {})) {
+  for (const k of Object.keys(entries)) if (k.includes('[')) addKey(k);
+}
+for (const set of Object.values(ig.item_sets || {})) {
+  for (const k of Object.keys(set.items || {})) if (k.includes('[')) addKey(k);
+}
+
+for (const [lootKey, { paintName, itemName }] of skinKeys) {
   const pk = paintKits[paintName];
-  if (!pk) { report.unmatchedIcons.push(file); continue; }
-
   const item = items[itemName];
+  if (!pk || !item) { report.unmatchedKeys.push(lootKey); continue; }
+
   const ourKey = CANONICAL_TO_OURS[itemName] || itemName;
   const isKnife = itemName.includes('knife') || itemName === 'weapon_bayonet';
   const isGlove = GLOVE_ITEMS.has(itemName);
@@ -429,29 +426,34 @@ for (const file of defaultGenerated) {
     bucket[ourKey] = entry;
   }
 
-  const lootKey = `[${paintName}]${itemName}`.toLowerCase();
+  const skinId = String(pk.paint_index);
+  // Zaten katalogda varsa (mevcut kayıt) DOKUNMA — sadece TR ismini üretmeye çalış.
+  const already = (bucket[ourKey].skins || []).some(s => String(s.skinId) === skinId);
+
   let rarity;
   if (isKnife || isGlove) rarity = 'gold';
   else {
     rarity = rarities[lootKey];
-    if (!rarity) { report.missingRarity.push(lootKey); continue; }
+    if (!rarity) { if (!already) report.missingRarity.push(lootKey); continue; }
   }
 
   const phase = detectPhase(paintName);
   let skinName = t(EN, pk.description_tag);
-  if (!skinName) { report.missingName.push(pk.description_tag); skinName = null; }
-  const skinNameTr = t(TR, pk.description_tag);
+  if (!skinName && !already) { report.missingName.push(pk.description_tag); }
   if (phase && skinName) skinName = `${skinName} (${phase})`;
+  const skinNameTr = t(TR, pk.description_tag);
+  if (skinNameTr) trNames.skins[`${ourKey}#${skinId}`] = phase ? `${skinNameTr} (${phase})` : skinNameTr;
 
-  const iconPath = `econ/default_generated/${base}`;
-  const skinId = String(pk.paint_index);
+  if (already) continue;
+  if (!skinName) continue; // isimsiz yeni skin eklenmez (raporda listelendi)
+
   bucket[ourKey].skins.push({
     name: skinName,
     photo: `${ourKey}_${pk.name}.png`,
     legacy_model: pk.legacy_model,
     skinId,
     rarity,
-    imageUrl: img(iconPath),
+    imageUrl: imgSkin(ourKey, skinId),
     pattern: pk.name,
     min_float: pk.wear_remap_min,
     max_float: pk.wear_remap_max,
@@ -460,19 +462,18 @@ for (const file of defaultGenerated) {
     phase,
     collections: (collectionsByKey[lootKey] || []).slice(0, 3)
   });
-  if (skinNameTr) trNames.skins[`${ourKey}#${skinId}`] = phase ? `${skinNameTr} (${phase})` : skinNameTr;
 }
 
-// Default girdileri
+// Default (skinId 0) girdileri eksikse ekle (görsel mevcut katalogdan korunur)
 for (const [ourKey, entry] of Object.entries({ ...weaponsOut, ...knivesOut })) {
-  const canonical = Object.entries(CANONICAL_TO_OURS).find(([, v]) => v === ourKey)?.[0] || ourKey;
+  if ((entry.skins || []).some(s => String(s.skinId) === '0')) continue;
   entry.skins.unshift({
     name: 'Default',
     photo: `${ourKey}_default.png`,
     legacy_model: false,
     skinId: '0',
     rarity: 'default',
-    imageUrl: img(`econ/weapons/base_weapons/${canonical}`),
+    imageUrl: imgSkin(ourKey, '0'),
     pattern: null, min_float: 0, max_float: 1,
     stattrak: false, souvenir: false, phase: null, collections: []
   });
@@ -481,7 +482,7 @@ for (const bucket of [weaponsOut, knivesOut, glovesOut]) {
   for (const e of Object.values(bucket)) e.skins.sort((a, b) => parseInt(a.skinId) - parseInt(b.skinId));
 }
 
-// --- Stickers ---------------------------------------------------------------
+// --- Stickers (items_game.txt'ten bütün olarak) ------------------------------
 const stickersOut = [];
 for (const [objectId, kit] of Object.entries(ig.sticker_kits || {})) {
   const item = { ...kit, object_id: objectId };
@@ -493,7 +494,7 @@ for (const [objectId, kit] of Object.entries(ig.sticker_kits || {})) {
   if (String(item.name || '').includes('graffiti')) continue;
   if (String(item.name || '').includes('spray_')) continue;
 
-  if (item.name === 'comm01_howling_dawn') item.item_rarity = 'contraband'; // ByMykel düzeltmesi
+  if (item.name === 'comm01_howling_dawn') item.item_rarity = 'contraband'; // oyun düzeltmesi
   let nameToken = item.item_name;
   if (nameToken === '#StickerKit_dhw2014_dignitas_gold') nameToken = '#StickerKit_dhw2014_teamdignitas_gold';
 
@@ -503,10 +504,8 @@ for (const [objectId, kit] of Object.entries(ig.sticker_kits || {})) {
   const rarity = RARITY_ITEM[rarityId];
   if (!rarity) { report.missingRarity.push(`sticker ${objectId} ${rarityId}`); continue; }
 
-  stickersOut.push({
-    id: Number(objectId), name, rarity,
-    imageUrl: img(`econ/stickers/${item.sticker_material.toLowerCase()}`)
-  });
+  const id = Number(objectId);
+  stickersOut.push({ id, name, rarity, imageUrl: imgFlat('stickers', id) });
   const nameTr = t(TR, nameToken);
   if (nameTr) trNames.stickers[objectId] = nameTr;
 }
@@ -515,9 +514,7 @@ stickersOut.sort((a, b) => a.id - b.id);
 // --- Keychains ---------------------------------------------------------------
 const keychainsOut = [];
 for (const [objectId, kc] of Object.entries(ig.keychain_definitions || {})) {
-  // Turnuva highlight charm'ları (item_quality=tournament) ve Sticker Slab
-  // (item_quality=customized) charm kataloğuna girmez — ByMykel de bunları
-  // keychains.json yerine highlights/stickerSlabs olarak ayrı yayınlar.
+  // Turnuva highlight (item_quality=tournament) ve Sticker Slab (customized) hariç.
   if (kc.item_quality === 'tournament' || kc.item_quality === 'customized') continue;
   const nameToken = kc.loc_name;
   const name = t(EN, nameToken);
@@ -525,27 +522,25 @@ for (const [objectId, kc] of Object.entries(ig.keychain_definitions || {})) {
   const rarityId = `rarity_${kc.item_rarity}`;
   const rarity = RARITY_ITEM[rarityId];
   if (!rarity) { report.missingRarity.push(`keychain ${objectId} ${rarityId}`); continue; }
-  const imageInv = (kc.image_inventory ?? ig.keychain_definitions[kc.base]?.image_inventory ?? '').toLowerCase();
-  keychainsOut.push({ id: Number(objectId), name, rarity, imageUrl: imageInv ? img(imageInv) : null });
+  const id = Number(objectId);
+  keychainsOut.push({ id, name, rarity, imageUrl: imgFlat('keychains', id) });
   const nameTr = t(TR, nameToken);
   if (nameTr) trNames.keychains[objectId] = nameTr;
 }
 keychainsOut.sort((a, b) => a.id - b.id);
 
-// --- Music kits ---------------------------------------------------------------
+// --- Music kits --------------------------------------------------------------
 const musicOut = [];
 for (const [objectId, md] of Object.entries(ig.music_definitions || {})) {
   let m = { ...md };
-  if (m.name === 'valve_02') { // ByMykel/Valve mükerrer kaydı: valve_01 ile aynı içerik
-    m.loc_name = '#musickit_valve_csgo_01';
-  }
+  if (m.name === 'valve_02') m.loc_name = '#musickit_valve_csgo_01'; // valve_01 ile mükerrer
   const name = t(EN, m.loc_name);
   if (!name) { report.missingName.push(`musickit ${objectId} ${m.loc_name}`); continue; }
-  const stattrak = t(EN, `coupon_musickit_${m.name}_stattrak`) !== null
-    || MUSIC_STATTRAK_ONLY.has(m.name);
+  const stattrak = t(EN, `coupon_musickit_${m.name}_stattrak`) !== null || MUSIC_STATTRAK_ONLY.has(m.name);
+  const id = Number(objectId);
   musicOut.push({
-    id: Number(objectId), name, rarity: 'milspec',
-    imageUrl: img(String(m.image_inventory || '').toLowerCase()),
+    id, name, rarity: 'milspec',
+    imageUrl: imgFlat('musickits', id),
     stattrak,
     stattrak_only: MUSIC_STATTRAK_ONLY.has(m.name)
   });
@@ -554,7 +549,7 @@ for (const [objectId, md] of Object.entries(ig.music_definitions || {})) {
 }
 musicOut.sort((a, b) => a.id - b.id);
 
-// --- Collectibles -------------------------------------------------------------
+// --- Collectibles ------------------------------------------------------------
 const collectiblesOut = [];
 for (const it of Object.values(items)) {
   const nameToken = it.item_name_resolved;
@@ -564,7 +559,6 @@ for (const it of Object.values(items)) {
     || nameToken.startsWith('#CSGO_TournamentPass') || nameToken.startsWith('#CSGO_Ticket_');
   if (!isColl) continue;
 
-  // tip (ByMykel getType portu)
   const inv = String(it.image_inventory || '');
   let type = null;
   if (inv.includes('service_medal')) type = 'Service Medal';
@@ -582,7 +576,6 @@ for (const it of Object.values(items)) {
     else type = 'Tournament Finalist Trophy';
   } else if (it.prefab === 'premier_season_coin') type = 'Premier Season Coin';
 
-  // rarity (item_rarity yoksa prefab'dan — ByMykel getCollectibleRarity portu)
   let rarityId = it.item_rarity ? `rarity_${it.item_rarity}` : null;
   if (!rarityId && it.prefab) {
     for (const key of String(it.prefab).split(' ')) {
@@ -604,9 +597,10 @@ for (const it of Object.values(items)) {
   if (!name) { report.missingName.push(nameToken); continue; }
   if (genuine) name = `${t(EN, 'genuine') || 'Genuine'} ${name}`;
 
+  const id = Number(it.object_id);
   collectiblesOut.push({
-    id: Number(it.object_id), name, rarity,
-    imageUrl: it.image_inventory ? img(String(it.image_inventory).toLowerCase()) : null,
+    id, name, rarity,
+    imageUrl: imgFlat('collectibles', id),
     type: type || 'Collectible',
     genuine
   });
@@ -615,7 +609,7 @@ for (const it of Object.values(items)) {
 }
 collectiblesOut.sort((a, b) => a.id - b.id);
 
-// --- Agents -------------------------------------------------------------------
+// --- Agents ------------------------------------------------------------------
 const agentsOut = { 2: {}, 3: {} };
 for (const it of Object.values(items)) {
   if (!String(it.name || '').startsWith('customplayer_')) continue;
@@ -638,7 +632,7 @@ for (const it of Object.values(items)) {
     model,
     skinId: Number(it.object_id),
     rarity,
-    imageUrl: img(`econ/characters/${it.name.toLowerCase()}`)
+    imageUrl: imgFlat('agents', it.object_id)
   });
   const nameTr = t(TR, it.item_name_resolved);
   if (nameTr) trNames.agents[it.object_id] = nameTr;
@@ -647,13 +641,13 @@ for (const teamObj of Object.values(agentsOut)) {
   for (const g of Object.values(teamObj)) g.skins.sort((x, y) => x.skinId - y.skinId);
 }
 
-// --- catalog-game/ yaz --------------------------------------------------------
-fs.mkdirSync(OUT, { recursive: true });
-const gameCounts = {};
+// --- catalog/ yaz ------------------------------------------------------------
+fs.mkdirSync(CATALOG, { recursive: true });
+const counts = {};
 const writeOut = (name, data) => {
-  writeJson(path.join(OUT, name), data);
-  gameCounts[name] = Array.isArray(data) ? data.length : Object.keys(data).length;
-  console.log(`  catalog-game/${name}: ${gameCounts[name]} kayıt`);
+  writeJson(path.join(CATALOG, name), data);
+  counts[name] = Array.isArray(data) ? data.length : Object.keys(data).length;
+  console.log(`  catalog/${name}: ${counts[name]} kayıt`);
 };
 writeOut('weapons.json', weaponsOut);
 writeOut('knives.json', knivesOut);
@@ -664,54 +658,31 @@ writeOut('keychains.json', keychainsOut);
 writeOut('musickits.json', musicOut);
 writeOut('collectibles.json', collectiblesOut);
 writeOut('names.tr.json', trNames);
-writeJson(path.join(OUT, 'index.json'), {
+
+// Görselsiz (imageUrl=null) kayıt sayısı — görünür rapor
+let noImage = 0;
+for (const b of [weaponsOut, knivesOut, glovesOut]) for (const e of Object.values(b)) for (const s of e.skins) if (!s.imageUrl) noImage++;
+for (const a of [stickersOut, keychainsOut, musicOut, collectiblesOut]) for (const s of a) if (!s.imageUrl) noImage++;
+for (const tm of Object.values(agentsOut)) for (const g of Object.values(tm)) for (const s of g.skins) if (!s.imageUrl) noImage++;
+
+writeJson(path.join(CATALOG, 'index.json'), {
   generated_at: new Date().toISOString(),
-  game_version: version,
-  files: gameCounts,
+  source: readJsonIf(path.join(ROOT, 'raw', 'meta.json')),
+  files: counts,
   warnings: {
-    unmatchedIcons: report.unmatchedIcons.length,
+    unmatchedKeys: report.unmatchedKeys.length,
     missingRarity: report.missingRarity.length,
-    missingName: report.missingName.length
+    missingName: report.missingName.length,
+    imageUrlNull: noImage
   }
 });
-if (report.unmatchedIcons.length || report.missingRarity.length || report.missingName.length) {
-  console.log(`  UYARI: eşlenemeyen ikon=${report.unmatchedIcons.length}, rarity'siz=${report.missingRarity.length}, isimsiz=${report.missingName.length} (detay: catalog-game/build-warnings.json)`);
-  writeJson(path.join(OUT, 'build-warnings.json'), report);
+if (report.unmatchedKeys.length || report.missingRarity.length || report.missingName.length || noImage) {
+  console.log(`  UYARI: eşlenemeyen=${report.unmatchedKeys.length}, rarity'siz=${report.missingRarity.length}, isimsiz=${report.missingName.length}, görselsiz=${noImage} (detay: catalog/build-warnings.json)`);
+  writeJson(path.join(CATALOG, 'build-warnings.json'), report);
 }
 
-// [5] Tutarlılık: catalog/ (ByMykel) vs catalog-game/ (bizim üretim)
-console.log('[5/7] Tutarlılık karşılaştırması (catalog vs catalog-game)...');
-const consistency = {};
-function idsOfFlat(dir, f) {
-  const d = readJsonIf(path.join(dir, f));
-  return new Set((d || []).map(x => String(x.id)));
-}
-for (const f of ['stickers.json', 'keychains.json', 'musickits.json', 'collectibles.json']) {
-  const a = idsOfFlat(CATALOG, f), b = idsOfFlat(OUT, f);
-  const onlyCatalog = [...a].filter(x => !b.has(x));
-  const onlyGame = [...b].filter(x => !a.has(x));
-  consistency[f] = { catalog: a.size, game: b.size, onlyCatalog: onlyCatalog.slice(0, 20), onlyGame: onlyGame.slice(0, 20), onlyCatalogCount: onlyCatalog.length, onlyGameCount: onlyGame.length };
-  console.log(`  ${f}: catalog=${a.size} game=${b.size} | yalnız catalog=${onlyCatalog.length} yalnız game=${onlyGame.length}`);
-}
-function skinKeys(dir) {
-  const set = new Set();
-  for (const f of ['weapons.json', 'knives.json', 'gloves.json']) {
-    const d = readJsonIf(path.join(dir, f)) || {};
-    for (const [k, v] of Object.entries(d)) for (const s of v.skins || []) set.add(`${k}#${s.skinId}`);
-  }
-  return set;
-}
-{
-  const a = skinKeys(CATALOG), b = skinKeys(OUT);
-  const onlyCatalog = [...a].filter(x => !b.has(x));
-  const onlyGame = [...b].filter(x => !a.has(x));
-  consistency['skins'] = { catalog: a.size, game: b.size, onlyCatalog: onlyCatalog.slice(0, 30), onlyGame: onlyGame.slice(0, 30), onlyCatalogCount: onlyCatalog.length, onlyGameCount: onlyGame.length };
-  console.log(`  skins (weapon#paint): catalog=${a.size} game=${b.size} | yalnız catalog=${onlyCatalog.length} yalnız game=${onlyGame.length}`);
-}
-writeJson(path.join(OUT, 'consistency-report.json'), consistency);
-
-// [6] Yeni eklenen itemler (önceki catalog/ ile diff)
-console.log('[6/7] Yeni itemler:');
+// [4] Yeni eklenen itemler (önceki catalog/ ile diff)
+console.log('[4/5] Yeni itemler:');
 const afterIds = catalogIdSets();
 let anyNew = false;
 for (const [cat, after] of Object.entries(afterIds)) {
@@ -724,11 +695,11 @@ for (const [cat, after] of Object.entries(afterIds)) {
 }
 if (!anyNew) console.log('  (yeni item yok)');
 
-// [7] git commit + push
+// [5] git commit + push
 if (NO_GIT) {
-  console.log('[7/7] --no-git verildi, commit/push atlandı.');
+  console.log('[5/5] --no-git verildi, commit/push atlandı.');
 } else {
-  console.log('[7/7] git commit + push...');
+  console.log('[5/5] git commit + push...');
   const run = args => spawnSync(GIT, args, { cwd: ROOT, encoding: 'utf8' });
   const ver = run(['--version']);
   if (ver.error || ver.status !== 0) {

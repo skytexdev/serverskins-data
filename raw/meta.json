@@ -1,24 +1,12 @@
 {
-  "source": "ByMykel/CSGO-API",
-  "source_url": "https://github.com/ByMykel/CSGO-API",
-  "source_commit": "cc0ae53f027b432db0070187bd7282c287273fe6",
-  "source_commit_date": "2026-07-17T04:53:43Z",
+  "source": "Valve CS2 game files",
+  "source_url": "https://github.com/SteamDatabase/GameTracking-CS2",
+  "source_files": [
+    "items_game.txt",
+    "csgo_english.txt",
+    "csgo_turkish.txt"
+  ],
   "fetched_at": "2026-07-19T19:30:13.265Z",
-  "languages": [
-    "en"
-  ],
-  "note": "ByMykel main branch'i su anda yalnizca 'en' ve 'zh-CN' dillerini yayinliyor (workflow vars.LANGUAGES ile sinirlandirilmis). 'tr' dahil diger diller artik public/api altinda uretilmiyor; TR isimler icin scripts/update-from-game.mjs, counter-strike-file-tracker'daki csgo_turkish.json'u kullanir.",
-  "files": [
-    "en/skins.json",
-    "en/skins_not_grouped.json",
-    "en/stickers.json",
-    "en/keychains.json",
-    "en/agents.json",
-    "en/music_kits.json",
-    "en/collectibles.json",
-    "en/crates.json",
-    "en/base_weapons.json"
-  ],
   "game_version": {
     "ClientVersion": "2000876",
     "ServerVersion": "2000876",

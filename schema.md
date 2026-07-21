@@ -15,8 +15,8 @@ https://raw.githubusercontent.com/skytexdev/serverskins-data/main/catalog/<dosya
 Tek tip küçük harf string: `default`, `common`, `uncommon`, `consumer`, `milspec`,
 `restricted`, `classified`, `covert`, `contraband`, `gold`.
 
-ByMykel/oyun rarity id eşlemesi (build.mjs `RARITY_*` tabloları, backend verisiyle
-çapraz doğrulanmıştır):
+Oyun (items_game.txt) rarity id eşlemesi (`update-from-game.mjs` `RARITY_*`
+tabloları, backend verisiyle çapraz doğrulanmıştır):
 
 | Oyun (silah)              | Bizim      | Oyun (kozmetik/agent)      | Bizim      |
 |---------------------------|------------|----------------------------|------------|
@@ -116,9 +116,8 @@ Not: Turnuva highlight charm'ları ve Sticker Slab bu listeye girmez.
   "stattrak": true,               // StatTrak varyantı var mı
   "stattrak_only": false }        // yalnız StatTrak olarak satıldı (7 kit: Beartooth vb.)
 ```
-ByMykel StatTrak varyantlarını ayrı kayıt olarak yayınlar (`music_kit-3_st`);
-biz tek kayda bayrak olarak birleştiririz. 101 kayıt = oyunun music_definitions
-tablosunun tamamı.
+StatTrak varyantları tek kayda bayrak olarak birleştirilir. 101 kayıt = oyunun
+`music_definitions` tablosunun tamamı.
 
 ## catalog/collectibles.json — `[Collectible]`  (backend'de `pins.json`)
 
@@ -135,19 +134,17 @@ tablosunun tamamı.
 
 Üretim metası: `generated_at`, `source` (raw/meta.json içeriği), dosya başına kayıt sayısı.
 
-## catalog-game/ (ikincil doğrulama üretimi)
+## catalog/ ek dosyaları
 
-`scripts/update-from-game.mjs` items_game.txt + csgo_english.txt'den AYNI şemayla
-bağımsız bir katalog üretir. Ek dosyalar:
+`scripts/update-from-game.mjs` üretimi sırasında `catalog/` altına ek olarak:
 - `names.tr.json` — Türkçe isimler: `{ skins: {"itemKey#skinId": ad}, stickers: {id: ad}, ... }`
-- `consistency-report.json` — catalog/ ile id-düzeyi karşılaştırma
-- `build-warnings.json` — eşlenemeyen ikonlar / rarity'si olmayan kombinasyonlar
-  (oyunda yayınlanmamış kayıtlar; bilinçli olarak hariç, sessiz düşme yok)
+- `build-warnings.json` — eşlenemeyen `[paint]item` anahtarları / rarity'si veya
+  ismi olmayan kombinasyonlar (oyunda yayınlanmamış kayıtlar; bilinçli olarak
+  hariç, sessiz düşme yok)
 
 ## raw/
 
-- `raw/en/*.json` — ByMykel/CSGO-API snapshot (kaynak: `raw/meta.json` içinde commit sha)
-- `raw/game/` — Valve oyun dosyaları: `items_game.txt`, `csgo_english.txt`
-  (SteamDatabase/GameTracking-CS2), `csgo_turkish.json` (counter-strike-file-tracker),
-  `images.json` + `default_generated.json` (counter-strike-image-tracker),
+- `raw/game/` — Valve oyun dosyaları (SteamDatabase/GameTracking-CS2):
+  `items_game.txt`, `csgo_english.txt`, `csgo_turkish.txt`,
   `steam.inf` + `version.json` (sürüm takibi)
+- `raw/meta.json` — kaynak/sürüm meta (Valve oyun sürümü)
